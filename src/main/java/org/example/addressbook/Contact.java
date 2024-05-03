@@ -19,7 +19,11 @@ public class Contact {
         }
     }
 
-    public void addContacts(){
+    public void addContacts(String name){
+        if(userdata.stream().anyMatch(data->data.getFirstName().equalsIgnoreCase(name))){
+            System.out.println("Name already exists");
+        }
+        else {
         System.out.println("Enter the First Name : ");
         String first_name = sc.next();
         System.out.println("Enter the Last Name : ");
@@ -39,6 +43,7 @@ public class Contact {
 
         UserData data = new UserData(first_name, last_name, address, city, state, zipcode, phone_number, email_id);
         userdata.add(data);
+        }
     }
 
     public void updateContact(){
@@ -124,14 +129,14 @@ public class Contact {
             System.out.print("Enter the UserName :");
             String username = sc.next();
             if(username.equals(userData2.getFirstName())){
-                        userData2.setFirstName("");
-                        userData2.setLastName(" ");
-                        userData2.setAddress(" ");
-                        userData2.setCity(" ");
-                        userData2.setState(" ");
-                        userData2.setZipcode(" ");
-                        userData2.setPhonenumber(" ");
-                        userData2.setEmailid(" ");
+                userData2.setFirstName("");
+                userData2.setLastName(" ");
+                userData2.setAddress(" ");
+                userData2.setCity(" ");
+                userData2.setState(" ");
+                userData2.setZipcode(" ");
+                userData2.setPhonenumber(" ");
+                userData2.setEmailid(" ");
             }
             else{
                 System.out.println("User not Found!");
@@ -156,18 +161,20 @@ public class Contact {
     public void menuOption(Contact contact){
         while (true){
             System.out.println(" 1.Add Contact " +
-                               " 2.Update Contact" +
-                               " 3.Delete Contact " +
-                               " 4.View Contact  " +
-                               " 5.Add AddressBook " +
-                               " 6.Exit");
+                    " 2.Update Contact" +
+                    " 3.Delete Contact " +
+                    " 4.View Contact  " +
+                    " 5.Add AddressBook " +
+                    " 6.Exit");
             System.out.println("Enter a value :");
             switch (sc.nextInt()) {
                 case 1:
                     System.out.println("Enter how many person u want to add : ");
                     int a = sc.nextInt();
                     for(int i=0;i<a;i++){
-                        contact.addContacts();
+                        System.out.println("Enter the name of Person : ");
+                        String name = sc.next();
+                        contact.addContacts(name);
                         System.out.println("Added Successfully ");
                     }
                     break;
@@ -204,4 +211,3 @@ public class Contact {
         }
     }
 }
-
