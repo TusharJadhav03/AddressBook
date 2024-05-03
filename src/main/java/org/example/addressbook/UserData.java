@@ -82,7 +82,7 @@ public class UserData {
         @Override
         public String toString(){
 
-            return "*** Address Book ***"+
+            return "***===== Address Book =====***"+
                     " \n First Name : "+first_name+
                     " \n Last Name : "+last_name+
                     " \n Address : "+address+
@@ -90,7 +90,7 @@ public class UserData {
                     " \n State : "+state+
                     " \n ZipCode : "+zipcode+
                     " \n Phone Number : "+phone_number+
-                    " \n Email Id : "+email_id;
+                    " \n Email Id : "+email_id + "\n";
         }
 
     }

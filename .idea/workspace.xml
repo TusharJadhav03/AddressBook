@@ -7,6 +7,7 @@
     <list default="true" id="77505022-86c0-4696-892f-0faad84ef8fc" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/addressbook/Contact.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/addressbook/Contact.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/addressbook/UserData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/addressbook/UserData.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,7 +37,7 @@
   "keyToString": {
     "Application.AddressBook.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "UC8-AbilityToSearchPerson",
     "kotlin-language-version-configured": "true"
   }
 }]]></component>

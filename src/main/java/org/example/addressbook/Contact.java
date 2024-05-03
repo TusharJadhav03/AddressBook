@@ -2,7 +2,9 @@ package org.example.addressbook;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Scanner;
+import java.util.stream.Collectors;
 
 public class Contact {
 
@@ -157,6 +159,26 @@ public class Contact {
         }
     }
 
+    public void searchPersonInACity(String city){
+        for(UserData data : userdata) {
+            if (data.getCity().equalsIgnoreCase(city)) {
+                userdata.stream().filter(userData -> userData.getCity().equalsIgnoreCase(city)).toList().forEach(System.out::println);
+            } else {
+                System.out.println("Person not found in that city");
+            }
+        }
+    }
+
+    public void searchPersonInAState(String state) {
+        for (UserData data : userdata) {
+            if (data.getState().equalsIgnoreCase(state)) {
+                userdata.stream().filter(userData -> userData.getState().equalsIgnoreCase(state)).toList().forEach(System.out::println);
+            } else {
+                System.out.println("Person not found in that state");
+            }
+        }
+    }
+
 
     public void menuOption(Contact contact){
         while (true){
@@ -165,7 +187,9 @@ public class Contact {
                     " 3.Delete Contact " +
                     " 4.View Contact  " +
                     " 5.Add AddressBook " +
-                    " 6.Exit");
+                    " 6.Search Person in City " +
+                    " 7.Search Person in State " +
+                    " 8.Exit");
             System.out.println("Enter a value :");
             switch (sc.nextInt()) {
                 case 1:
@@ -202,6 +226,18 @@ public class Contact {
                     break;
 
                 case 6:
+                    System.out.println("Enter the city : ");
+                    String city = sc.next();
+                    contact.searchPersonInACity(city);
+                    break;
+
+                case 7:
+                    System.out.println("Enter the state : ");
+                    String state = sc.next();
+                    contact.searchPersonInAState(state);
+                    break;
+
+                case 8:
                     System.exit(0);
                     break;
 
