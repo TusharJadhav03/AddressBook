@@ -196,6 +196,18 @@ public class Contact {
          userdata.sort(Comparator.comparing(UserData::getFirstName));
          userdata.forEach(System.out::println);
     }
+    public void sortEntriesByCity(){
+        userdata.sort(Comparator.comparing(UserData::getCity));
+        userdata.forEach(System.out::println);
+    }
+    public void sortEntriesByState(){
+        userdata.sort(Comparator.comparing(UserData::getState));
+        userdata.forEach(System.out::println);
+    }
+    public void sortEntriesByZip(){
+        userdata.sort(Comparator.comparing(UserData::getZipcode));
+        userdata.forEach(System.out::println);
+    }
 
 
     public void menuOption(Contact contact){
@@ -210,6 +222,9 @@ public class Contact {
                     " 8.Count of cities " +
                     " 9.Count of states " +
                     " 10.Sorted List by person names " +
+                    " 11.Sorted List by City " +
+                    " 12.Sorted List by State " +
+                    " 13.Sorted List by Zip " +
                     " 0.Exit");
             System.out.println("Enter a value :");
             switch (sc.nextInt()) {
@@ -271,6 +286,21 @@ public class Contact {
                 case 10:
                     System.out.println("Sorted list : ");
                     contact.sortEntriesByPersonName();
+                    break;
+
+                case 11:
+                    System.out.println("Sorted List : ");
+                    contact.sortEntriesByCity();
+                    break;
+
+                case 12:
+                    System.out.println("Sorted List : ");
+                    contact.sortEntriesByState();
+                    break;
+
+                case 13:
+                    System.out.println("Sorted List : ");
+                    contact.sortEntriesByZip();
                     break;
 
                 case 0:
