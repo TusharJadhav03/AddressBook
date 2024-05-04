@@ -1,9 +1,6 @@
 package org.example.addressbook;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Scanner;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class Contact {
@@ -195,6 +192,12 @@ public class Contact {
         System.out.println(personByState);
     }
 
+    public void sortEntriesByPersonName(){
+         userdata.sort(Comparator.comparing(UserData::getFirstName));
+         userdata.forEach(System.out::println);
+    }
+
+
     public void menuOption(Contact contact){
         while (true){
             System.out.println(" 1.Add Contact " +
@@ -206,6 +209,7 @@ public class Contact {
                     " 7.Search Person in State " +
                     " 8.Count of cities " +
                     " 9.Count of states " +
+                    " 10.Sorted List by person names " +
                     " 0.Exit");
             System.out.println("Enter a value :");
             switch (sc.nextInt()) {
@@ -262,6 +266,11 @@ public class Contact {
                 case 9:
                     System.out.println("Count of states : ");
                     contact.countByState();
+                    break;
+
+                case 10:
+                    System.out.println("Sorted list : ");
+                    contact.sortEntriesByPersonName();
                     break;
 
                 case 0:
