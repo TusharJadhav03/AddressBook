@@ -2,6 +2,7 @@ package org.example.addressbook;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
 import java.util.stream.Collectors;
 
@@ -184,6 +185,16 @@ public class Contact {
     }
 
 
+    public void countByCity() {
+            Map<String,Long> personByCity = userdata.stream().collect(Collectors.groupingBy(UserData::getCity,Collectors.counting()));
+            System.out.println(personByCity);
+    }
+
+    public void countByState() {
+        Map<String,Long> personByState = userdata.stream().collect(Collectors.groupingBy(UserData::getState,Collectors.counting()));
+        System.out.println(personByState);
+    }
+
     public void menuOption(Contact contact){
         while (true){
             System.out.println(" 1.Add Contact " +
@@ -193,7 +204,9 @@ public class Contact {
                     " 5.Add AddressBook " +
                     " 6.Search Person in City " +
                     " 7.Search Person in State " +
-                    " 8.Exit");
+                    " 8.Count of cities " +
+                    " 9.Count of states " +
+                    " 0.Exit");
             System.out.println("Enter a value :");
             switch (sc.nextInt()) {
                 case 1:
@@ -242,6 +255,16 @@ public class Contact {
                     break;
 
                 case 8:
+                    System.out.println("Count of cities : ");
+                    contact.countByCity();
+                    break;
+
+                case 9:
+                    System.out.println("Count of states : ");
+                    contact.countByState();
+                    break;
+
+                case 0:
                     System.exit(0);
                     break;
 
