@@ -90,7 +90,7 @@ public class UserData {
                     " \n State : "+state+
                     " \n ZipCode : "+zipcode+
                     " \n Phone Number : "+phone_number+
-                    " \n Email Id : "+email_id + "\n";
+                    " \n Email Id : "+email_id + " \n ";
         }
 
     }

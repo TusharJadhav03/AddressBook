@@ -2,7 +2,6 @@ package org.example.addressbook;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Scanner;
 import java.util.stream.Collectors;
 
@@ -11,6 +10,8 @@ public class Contact {
     ArrayList<UserData> userdata = new ArrayList<>(); //Single Addressbook
     HashMap<String,ArrayList<UserData>> AddressBook = new HashMap<>();// Multiple Addressbook with name
     Scanner sc = new Scanner(System.in);
+
+
 
     public void addAddressBook(String name){
         if(AddressBook.keySet().equals(name)){
@@ -158,21 +159,24 @@ public class Contact {
             }
         }
     }
-
+    ArrayList<UserData> cities = new ArrayList<>();
     public void searchPersonInACity(String city){
         for(UserData data : userdata) {
             if (data.getCity().equalsIgnoreCase(city)) {
-                userdata.stream().filter(userData -> userData.getCity().equalsIgnoreCase(city)).toList().forEach(System.out::println);
+                cities = (ArrayList<UserData>) userdata.stream().filter(userData -> userData.getCity().equalsIgnoreCase(city)).collect(Collectors.toList());
+                System.out.println(cities);
             } else {
                 System.out.println("Person not found in that city");
             }
         }
-    }
 
+    }
+    ArrayList<UserData> states = new ArrayList<>();
     public void searchPersonInAState(String state) {
         for (UserData data : userdata) {
             if (data.getState().equalsIgnoreCase(state)) {
-                userdata.stream().filter(userData -> userData.getState().equalsIgnoreCase(state)).toList().forEach(System.out::println);
+                states = (ArrayList<UserData>) userdata.stream().filter(userData -> userData.getState().equalsIgnoreCase(state)).collect(Collectors.toList());
+                System.out.println(states);
             } else {
                 System.out.println("Person not found in that state");
             }

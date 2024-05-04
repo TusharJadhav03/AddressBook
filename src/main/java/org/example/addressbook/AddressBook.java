@@ -6,7 +6,7 @@ public class AddressBook {
 
         Contact contact = new Contact();
 
-        System.out.println("***  Welcome To Address Book  ***");
+        System.out.println("***=====  Welcome To Address Book  =====***");
         contact.menuOption(contact);
 
     }
